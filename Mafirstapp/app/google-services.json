@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "809620461408",
+    "firebase_url": "https://native-app-list-view101.firebaseio.com",
+    "project_id": "native-app-list-view101",
+    "storage_bucket": "native-app-list-view101.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809620461408:android:f7164ddf771b13446ab005",
+        "android_client_info": {
+          "package_name": "com.amon.mafirstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809620461408-5dmb30o0g3ralmss7leqd6erp0cvqsgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amon.mafirstapp",
+            "certificate_hash": "212fa3022343b2736b53cecd0709f868a1bb77b7"
+          }
+        },
+        {
+          "client_id": "809620461408-a1img83b67bm1u1jh0lrsrc0taeng1cs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUBayYR1gNxZioNWA2nGwNYSmFe_LPHA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809620461408-a1img83b67bm1u1jh0lrsrc0taeng1cs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
