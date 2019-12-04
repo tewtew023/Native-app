@@ -1,13 +1,21 @@
 package com.amon.mafirstapp;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private String[] mDataset;
+    private Context mContext;
+    private String[] pic;
+    private String[] name;
+    private String[] category;
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -22,8 +30,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(String[] myDataset) {
-        mDataset = myDataset;
+    public MyAdapter(Context mContext, String[] pic , String[] name, String[] category) {
+
+        this.mContext = mContext;
+        this.category=category;
+        this.pic=pic;
+        this.name=name;
+
+
     }
 
     // Create new views (invoked by the layout manager)
@@ -43,7 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.textView.setText(mDataset[position]);
-
+//        Picasso.with(mContext).load(mImage[i]).into(holder.imgView);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
