@@ -22,7 +22,7 @@ import java.util.List;
 public class ListActivity extends AppCompatActivity {
     private ArrayList<String> list = new ArrayList<String>();
     private ArrayList<String> pic = new ArrayList<String>();
-    private ArrayList<String> catagory = new ArrayList<String>();
+    private ArrayList<String> category = new ArrayList<String>();
     private ArrayList<String> id = new ArrayList<String>();
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -41,11 +41,11 @@ public class ListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
 
-        String[] myDataset = {"Item 1", "Item 2", "Item 3"};
+//        String[] myDataset = {"Item 1", "Item 2", "Item 3"};
 
         final String TAG = "testFireStore";
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("shop")
+        db.collection("shops")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -53,15 +53,25 @@ public class ListActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
+                                System.out.println("name here!!!!!!!!!!!!!"+document.get("name"));
+
                                 list.add(document.get("name").toString());
+
                                 pic.add(document.get("url").toString());
+
                                 id.add(document.getId());
-                                catagory.add(document.get("catagory").toString());
+                                category.add(document.get("category").toString());
+                                System.out.println("url here!!!!!!!!!!!!!"+document.get("url"));
                             }
+
+                            System.out.println("list"+list+"pic"+pic+"id"+id);
+
                             String[] name = list.toArray(new String[0]);
                             String[] Pic = pic.toArray(new String[0]);
-                            String[] Catagory = catagory.toArray(new String[0]);
-                            mAdapter = new MyAdapter(ListActivity.this,Pic,name,Catagory);
+                            String[] Category = category.toArray(new String[0]);
+                            System.out.println("list"+name+"pic"+Pic+"id"+Category);
+
+                            mAdapter = new MyAdapter(ListActivity.this,Pic,name,Category);
                             recyclerView.setAdapter(mAdapter);
 
                         } else {
